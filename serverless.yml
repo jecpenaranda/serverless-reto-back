@@ -1,0 +1,69 @@
+
+service: serverless-reto-back
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-southeast-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: arn:aws:dynamodb:ap-southeast-1:*:*
+
+resources:
+  Resources:
+    PeliculasTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: 'peliculas'
+
+functions:
+  create:
+    handler: src/handler/createTodo.createTodo
+    events:
+      - http:
+          path: peliculas
+          method: post
+          cors: true
+  list:
+    handler: src/handler/listTodo.listTodo
+    events:
+      - http:
+          path: peliculas
+          method: get
+          cors: true
+  get:
+    handler: src/handler/getTodo.getTodo
+    events:
+      - http:
+          path: peliculas/{id}
+          method: get
+          cors: true
+  delete:
+    handler: src/handler/deleteTodo.deleteTodo
+    events:
+      - http:
+          path: peliculas/{id}
+          method: delete
+          cors: true
