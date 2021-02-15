@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "2b43fc74-01fd-42b4-8a67-4fbed07c8e50",
+		"name": "serverless-reto-back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list-reto-back",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lmdmfjn7y0.execute-api.ap-southeast-1.amazonaws.com/dev/peliculas",
+					"protocol": "https",
+					"host": [
+						"lmdmfjn7y0",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-reto-back",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"A New Hope\",\r\n    \"episodio_id\": 4,\r\n    \"parrafo_inicial\": \"It is a period of civil war.\\n\\nRebel spaceships, striking\\n\\nfrom a hidden base, have won\\n\\ntheir first victory against\\n\\nthe evil Galactic Empire.\\n\\n\\n\\nDuring the battle, Rebel\\n\\nspies managed to steal secret\\r\\nplans to the Empire's\\n\\nultimate weapon, the DEATH\\n\\nSTAR, an armored space\\n\\nstation with enough power\\n\\nto destroy an entire planet.\\n\\n\\n\\nPursued by the Empire's\\n\\nsinister agents, Princess\\n\\nLeia races home aboard her\\n\\nstarship, custodian of the\\n\\nstolen plans that can save her\\n\\npeople and restore\\n\\nfreedom to the galaxy....\",\r\n    \"director\": \"George Lucas\",\r\n    \"productor\": \"Gary Kurtz, Rick McCallum\",\r\n    \"fecha_lanzamiento\": \"1977-05-25\",\r\n    \"especies\": [\r\n        \"https://swapi.py4e.com/api/species/1/\",\"https://swapi.py4e.com/api/species/2/\"\r\n    ],\r\n    \"naves\": [\r\n        \"https://swapi.py4e.com/api/starships/2/\",\"https://swapi.py4e.com/api/starships/3/\"\r\n    ],  \r\n    \"vehiculos\": [\r\n        \"https://swapi.py4e.com/api/vehicles/4/\",\"https://swapi.py4e.com/api/vehicles/5/\"\r\n    ],\r\n    \"caracteres\": [\r\n        \"https://swapi.py4e.com/api/people/1/\",\"https://swapi.py4e.com/api/people/2/\"\r\n    ],\r\n    \"planetas\": [\r\n        \"https://swapi.py4e.com/api/planets/1/\",\"https://swapi.py4e.com/api/planets/2/\"\r\n    ],\r\n    \"url\": \"https://swapi.py4e.com/api/films/1/\"\r\n}"
+				},
+				"url": {
+					"raw": "https://lmdmfjn7y0.execute-api.ap-southeast-1.amazonaws.com/dev/peliculas",
+					"protocol": "https",
+					"host": [
+						"lmdmfjn7y0",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-reto-back",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lmdmfjn7y0.execute-api.ap-southeast-1.amazonaws.com/dev/peliculas/343e17d0-6f30-11eb-9125-7f74398a41ab",
+					"protocol": "https",
+					"host": [
+						"lmdmfjn7y0",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"peliculas",
+						"343e17d0-6f30-11eb-9125-7f74398a41ab"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
